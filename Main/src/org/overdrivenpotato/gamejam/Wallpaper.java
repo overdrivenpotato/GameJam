@@ -24,16 +24,9 @@ public class Wallpaper {
         this(new TextureRegion(texture));
     }
 
-    public Texture getTexture()
-    {
-        Texture temp = background.getTexture();
-        temp.setWrap(Texture.TextureWrap.Repeat, Texture.TextureWrap.Repeat);
-        return temp;
-    }
-
     public void move(float offX, float offY)
     {
-        y += offY;
+        y += offY / 2;
     }
 
     public float getY() {

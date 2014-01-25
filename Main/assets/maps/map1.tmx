@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" width="17" height="300" tilewidth="32" tileheight="32">
+<map version="1.0" orientation="orthogonal" width="17" height="600" tilewidth="32" tileheight="32">
  <tileset firstgid="1" name="wall" tilewidth="32" tileheight="32">
   <image source="wall.png" trans="000000" width="64" height="32"/>
  </tileset>
- <layer name="Tile Layer 1" width="17" height="300">
+ <tileset firstgid="3" name="movers" tilewidth="32" tileheight="32">
+  <image source="movers.png" trans="000000" width="128" height="32"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="17" height="600">
   <data encoding="base64" compression="zlib">
-   eJztlsGShDAIBfX/f3pPW1tTGwmEhxKnu8rLCC0JxPE4AKCSMxlzBhxXsZ58K95bgyLH89ss3vtcK9bjycZEe3t1DwAAAAAAAAAA+nMOrqwnW08F37LODrDX8ItnFqIxnmdZMTOYl3oUZxoHDhz3OuCa0f+Y56pyWF4rVlXHCjj+O7I9sOKyDkUdWcfMHanDi9Ix8j1RR7c5OIKOzFq8dT25HxGHx7vLWjo64JOOPXr6/MEfO/XuDgd80r1fOzqgHtVZV70rIvmze578zKxVrFW15x5P9n2fPfsr+Ti0fbHI5ns8EbL5I0+GbL7Hr94vVd9U8zPz4Hivw+vxkM23PPAOVDMCa0T3nz49C+dlfxRnrtKxUrfy2+KO75Pu+Yo+VM3C3fOocow8XRyqPVlx7eJR7c8bPZ1mEEevGqKOivyII5v/hjVYVOd7UDjge/kBMlsFUw==
+   eJztmu2O3CAMAK9q3/+Z2/44qZuC8ScxyYwU6XaDJwYDyWnz9QUAAAAAAAAAAAAAAAAAAAAAAADQnx/C8USH1GZ0vZVjlgcOv8N6aPLIqC2OOsed6/ZEx4yODk29duRR6bAcpzmkcZk5Rm1n1/X0ZbdjRJXDWotODu/86+iwOJ/k0K4XHHbHNWb1GYfd4alTV8fqM449Dk8ttfEej4TX8fPP8SvoyOxPdFxPrsu/tfA6onlQl7njWh/qktcPq+cvb10vkE9k3u1eP5mOWV+gJ7M54HmOk+p8p8PSF+iJd//Rxnacv1JfoCdvnIvsp/uZ/a/SlU75atZGJH7VxrI2Zm2ta6vKURE36rN1P5HG3puDJZfdc8TyfUeiuWbcczT3L+05y/135dBca3Tu+rc2D8v9fNam8nnEki+O+xwRz4hTHVXjcppDIhqv9UTjceyvicaRPR7edYGj1nGls0P6PuqY+SockvsOx8ozazciwzHzjM6vOMGhIRpfkcMd/cjOAQBq0e7/1j1WugeNvuvmuP6OLjlGv7ln5VHlGL27ckceVscT6+JZc3A+Gc9LV080nwre0s8OMNbwjWYuWNtoriW1WcF8qcczxppnKWsOFkfV+4Fah/ROz448NO8UVeZheaepIg/PO1WZeUTe6eI+Ws/oPqY5nurwgON/R7QGOPQOLW91nFBDHDiqHfBJxxrd6YBPTqrdDgd80r1eJzqgnqy1nrVXWOJX5zTxkblW0desMdd4ovt9dO174nHk1kUiGq/xWIjGjzwRovEaf/Z4ZdUta/6sPDie69B6NETjJQ88g6w5Aj6s40+d7oX1cj4Za67S4ck789lix/NJ9/iMOlTNhd3zMcsx8nRxZI2Jx3WKJ2t8nujpNAdx9MrB6qiItzii8U/og0R1vIYMB7yX34cYDNU=
   </data>
  </layer>
 </map>

@@ -9,14 +9,14 @@ import com.badlogic.gdx.graphics.Texture;
 /**
  * Created by marko on 25/01/14.
  */
-public class GameScreen implements Screen {
+public class ScreenGame implements Screen {
     private GL20 graphics;
     private EntityPlayer entityPlayer;
     private KeyboardMgr keyb;
     private World world;
     private GameJamGame theGame;
 
-    public GameScreen(GameJamGame gameJamGame)
+    public ScreenGame(GameJamGame gameJamGame)
     {
         this.theGame = gameJamGame;
         entityPlayer = new EntityPlayer(new Imp(new Texture("Main/assets/playeranimboxes.png"), 2, 1, 0.12f), 100, 100);

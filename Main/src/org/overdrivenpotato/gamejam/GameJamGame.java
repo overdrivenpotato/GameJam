@@ -1,11 +1,8 @@
 package org.overdrivenpotato.gamejam;
 
 import com.badlogic.gdx.Game;
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
-import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
 
 /**
  * Created by marko on 24/01/14.
@@ -20,7 +17,7 @@ public class GameJamGame extends Game {
 
     @Override
     public void create() {
-        gameScreen = new GameScreen(this);
+        gameScreen = new ScreenGame(this);
         setScreen(gameScreen);
     }
 
@@ -32,7 +29,7 @@ public class GameJamGame extends Game {
     public void restart()
     {
         gameScreen.dispose();
-        gameScreen = new GameScreen(this);
+        gameScreen = new ScreenGame(this);
         setScreen(gameScreen);
     }
 }
