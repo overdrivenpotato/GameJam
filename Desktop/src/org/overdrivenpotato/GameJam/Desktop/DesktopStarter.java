@@ -11,10 +11,12 @@ public class DesktopStarter {
     public static void main(String[] args)
     {
         LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
-        cfg.title = "GameJam Game!";
+        cfg.title = "Eye!";
         cfg.useGL20 = true;
-        cfg.width = 800;
-        cfg.height = 400;
-        new LwjglApplication(new GameJamGame(), cfg);
+        cfg.width = 544;
+        cfg.height = 600;
+        cfg.resizable = false;
+        LwjglApplication lwjglApplication = null;
+        lwjglApplication = new LwjglApplication(new GameJamGame(lwjglApplication), cfg);
     }
 }
