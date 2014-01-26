@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="34" height="87" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="moversnew" tilewidth="32" tileheight="16">
+  <image source="../moversnew.png" trans="000000" width="64" height="16"/>
+ </tileset>
+ <tileset firstgid="3" name="wallnew" tilewidth="16" tileheight="16">
+  <image source="../wallnew.png" trans="000000" width="32" height="16"/>
+ </tileset>
+ <layer name="solids" width="34" height="87">
+  <data encoding="base64" compression="zlib">
+   eJzt1kEOgCAMRFES739n41I3QjsTPtBJWNp5aBderbWr40TTM3vklCNvUDoIBoqDYFh9N5UGiiOTnQwURxnyBoqDsJtKQ9ShNkQcDsOow2VY0eE0/Dnc3WoHYUZPnI7ROBzRKB3ZZBzqOO6nspSD4fhaylEOquNJOd7ZzaH8L1EZIvOUz6pnKQyqO2UN6nebOQTHbEMkuxkyOb1f5ZjdTzAoMtswu59g2GEXswZFf8ag6o861P0Rh8tAcoxYKA63JxKK5YTvs7KF4iBZKA6SheIgWSiOUywUB8kSCcVCcbgsLscN3+sRmw==
+  </data>
+ </layer>
+ <layer name="entities" width="34" height="87">
+  <data encoding="base64" compression="zlib">
+   eJztwQENAAAAwqD3T20PBxQAAAAAAAAAAAAAAM8GLjgAAQ==
+  </data>
+ </layer>
+</map>

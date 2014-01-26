@@ -29,7 +29,7 @@ public class World {
         this.width = width;
         this.height = height;
         entities = new ArrayList<Entity>();
-        bg = new Wallpaper(new Texture("Main/assets/backgroundnew.png"));
+        bg = new Wallpaper(new Texture("Main/assets/bg.png"));
         tileWorld = new TileWorld(this);
     }
 
@@ -43,6 +43,8 @@ public class World {
         {
             if(!(e instanceof EntityPlayer))
             {
+//                if(e.isOffScreen())
+//                    continue;
                 if(((EntityDrawable)e).collision(screenGame.getPlayer()))
                     return false;
                 e.move(0, scrollSpeed);
@@ -54,8 +56,7 @@ public class World {
                     return false;
                 }
             }
-            if(e.isOffScreen())
-                continue;
+
             e.tick(keyb, this);
 
             if(e instanceof EntityPlayer)
@@ -86,7 +87,9 @@ public class World {
         batch.begin();
         for(Entity e : entities)
         {
-            if(e instanceof EntityDrawable)
+            if(e instanceof EntityPlayer)
+                ((EntityPlayer) e).draw(batch, 0, 0);
+            else if(e instanceof EntityDrawable)
                 ((EntityDrawable) e).draw(batch, FXManager.getModX(), FXManager.getModY());
         }
         batch.end();
@@ -95,5 +98,24 @@ public class World {
 
     public boolean collision(EntityDrawable entityDrawable) {
         return tileWorld.collision(entityDrawable);
+    }
+
+    public void move(int x, int y) {
+        tileWorld.move(x, y);
+    }
+
+    public void killEntities() {
+        ArrayList<Entity> e2 = (ArrayList<Entity>) entities.clone();
+        for(Entity e : e2)
+        {
+            if(e instanceof EntityLineAI)
+            {
+                if(e.getY() < 0)
+                {
+//                    System.out.println("Killing at " + e.getY());
+                    entities.remove(e);
+                }
+            }
+        }
     }
 }

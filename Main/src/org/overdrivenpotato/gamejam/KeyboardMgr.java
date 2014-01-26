@@ -53,4 +53,8 @@ public class KeyboardMgr {
     {
         return Gdx.input.isKeyPressed(key);
     }
+
+    public static boolean anyKey() {
+        return Gdx.input.isKeyPressed(Input.Keys.ANY_KEY);
+    }
 }

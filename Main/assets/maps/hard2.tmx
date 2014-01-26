@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="34" height="58" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="wallnew" tilewidth="16" tileheight="16">
+  <image source="../wallnew.png" trans="000000" width="32" height="16"/>
+ </tileset>
+ <tileset firstgid="3" name="moversnew" tilewidth="32" tileheight="16">
+  <image source="../moversnew.png" trans="000000" width="64" height="16"/>
+ </tileset>
+ <layer name="solid" width="34" height="58">
+  <data encoding="base64" compression="zlib">
+   eJztlUsOgCAMROX+l3Zlgsqn0g8dM5OwsdC+DLSWQ6Yi3Ldypizmt9YXjix+ZOHwFKIf5IgToh/kiBOiH1k4PIXmh8Yzaf7ZPot7k9QY7bF8O7M6vbjH+x3VasU8e6hX7/k9oo9bNcsgHsVSc+yYZ3Xt3TM1A8MlctwlneuaZcUhyaEVOciBxKHpPcu+1+iP90IOciBzaP/5X2YQgh/kIAc53hya/reaP1Je69iKEDg8zlnnQ+Q4ASw6AP4=
+  </data>
+ </layer>
+ <layer name="entities" width="34" height="58">
+  <data encoding="base64" compression="zlib">
+   eJzt0gEJAAAIAzDB/p0tIYi6JTj/I3bL6QAP6ZxO/nSfjfezIQAAAAAAUwqq6wAQ
+  </data>
+ </layer>
+</map>

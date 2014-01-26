@@ -2,6 +2,8 @@ package org.overdrivenpotato.gamejam;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.audio.Music;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.GL20;
@@ -17,11 +19,13 @@ public class ScreenGame implements Screen {
     private KeyboardMgr keyb;
     private World world;
     private GameJamGame theGame;
+    private Sound death;
 
     public ScreenGame(GameJamGame gameJamGame)
     {
+        death = Gdx.audio.newSound(Gdx.files.internal("Main/assets/death.ogg"));
         this.theGame = gameJamGame;
-        entityPlayer = new EntityPlayer(new Imp(new Texture("Main/assets/playeranimboxes.png"), 2, 1, 0.12f), 100, 100);
+        FXManager.setPlayer(entityPlayer = new EntityPlayer(new Imp(new Texture("Main/assets/eye2.png"), 5, 5, 0.125f, 24), Gdx.graphics.getWidth() / 2, 100));
         world = new World(550, 600, this);
         world.spawnEntity(entityPlayer);
 
@@ -35,6 +39,7 @@ public class ScreenGame implements Screen {
         graphics.glClear(GL20.GL_COLOR_BUFFER_BIT | GL20.GL_DEPTH_BUFFER_BIT);
         if(!world.tick(keyb))
         {
+            death.play();
             theGame.restart();
             return;
         }
@@ -68,7 +73,7 @@ public class ScreenGame implements Screen {
 
     @Override
     public void dispose() {
-
+//        music.stop();
     }
 
     public EntityPlayer getPlayer() {

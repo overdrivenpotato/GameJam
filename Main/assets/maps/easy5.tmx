@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="34" height="75" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="wallnew" tilewidth="16" tileheight="16">
+  <image source="../wallnew.png" trans="000000" width="32" height="16"/>
+ </tileset>
+ <tileset firstgid="3" name="moversnew" tilewidth="32" tileheight="16">
+  <image source="../moversnew.png" trans="000000" width="64" height="16"/>
+ </tileset>
+ <layer name="solids" width="34" height="75">
+  <data encoding="base64" compression="zlib">
+   eJzt1MEOAyEIBND1/3+66XWjwsCAbGQSL63gi9KO53mGYlmj6Y2sdnAcbGM72tGOdlgdnmVxRFizHNqeWgfiReyow3snqxqvA/FUc8xqrI53Lfo2px2r92E5UAtrPjz3wXas7vikY1bDiHfubnaMRc0JBzJ77WhHtAMxRjm01lsc795fdTBm39I707Hr3448B2KR9uw+txh2Z6z2SLE6NOcwHZ47yXJIZyF9JAtSi3yHWpCaSEeVd8lyeAyoA/ntaf+f2A7JIiXLgdwl4pjVSA7rHKJ9tfulOqvDs9rhn5/bHSc8UioYMixoKhgiLN5UMDAs7FQwWCzRqWDQWLJTwTCznM7f8AMUSwVi
+  </data>
+ </layer>
+ <layer name="entities" width="34" height="75">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20ND6AAAAAAAAAAAACAFwMn2AAB
+  </data>
+ </layer>
+</map>

@@ -34,13 +34,18 @@ public class Wallpaper {
     }
 
     public void draw() {
-        if(getY() <= -background.getRegionHeight())
-            y = 0;
-        batch.begin();
-        batch.draw(background, 0, getY());
-        if(getY() + background.getRegionHeight() != Gdx.graphics.getHeight())
+        if(getY() <= -(background.getRegionHeight()))
         {
-            batch.draw(background, 0, getY() + Gdx.graphics.getHeight());
+
+//            System.out.println("y" + getY() + ", " + background.getRegionHeight());
+            y = 0;
+        }
+            batch.begin();
+        batch.draw(background, 0, getY());
+//        if(getY() + background.getRegionHeight() != Gdx.graphics.getHeight())
+        if(getY() <= -(background.getRegionHeight() - Gdx.graphics.getHeight()))
+        {
+            batch.draw(background, 0, getY() + background.getRegionHeight());// +  Gdx.graphics.getHeight());
         }
 
         batch.end();
