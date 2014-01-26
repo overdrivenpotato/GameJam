@@ -2,34 +2,26 @@ package org.overdrivenpotato.gamejam;
 
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /**
  * Created by marko on 26/01/14.
  */
-public class ScreenIntro extends ScreenImageDisplay{
-
+public class ScreenCredits extends ScreenImageDisplay {
     private GameJamGame game;
-
-    public ScreenIntro(GameJamGame game)
+    public ScreenCredits(Screen parentScreen, GameJamGame game)
     {
-        super(null);
-        setImage(new Imp(new Texture("Main/assets/intro.png"), 1, 1));
+        super(parentScreen);
         this.game = game;
+        setImage(new Imp(new Texture("Main/assets/credits.png"), 1, 1));
     }
 
     @Override
     public void render(float delta) {
         super.render(delta);
-        if(KeyboardMgr.credits())
+        if(KeyboardMgr.startKey())
         {
-            game.setScreen(new ScreenCredits(this, game));
+            game.setScreen(getParent());
         }
-        else if(KeyboardMgr.startKey())
-        {
-            game.showGame();
-        }
-
     }
 
     @Override
@@ -61,4 +53,5 @@ public class ScreenIntro extends ScreenImageDisplay{
     public void dispose() {
 
     }
+
 }

@@ -10,54 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cf40f8b4-6885-48f8-aaff-d3acd60de3d7" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/b.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/bg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/death.ogg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/eye2.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/intro.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/moversg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/moversg.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/moversnew.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/wallnew.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenIntro.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/easy1.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/easy2.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/easy3.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/easy4.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/easy5.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/easy6.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/hard1.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/hard10.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/hard2.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/hard3.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/hard4.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/hard5.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/hard6.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/hard7.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/hard8.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/hard9.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/map2old.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/medium1.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/medium2.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/medium3.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/medium4.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/medium5.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/medium6.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/medium7.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/random1.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/random2.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/random3.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/random4.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/random5.tmx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/assets/maps/random6.tmx" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenCredits.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenImageDisplay.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/assets/eye2.png" afterPath="$PROJECT_DIR$/Main/assets/eye2.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/EntityPlayer.java" afterPath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/EntityPlayer.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/FXManager.java" afterPath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/FXManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/GameJamGame.java" afterPath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/GameJamGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/Imp.java" afterPath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/Imp.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/KeyboardMgr.java" afterPath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/KeyboardMgr.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenGame.java" afterPath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenGame.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/TileWorld.java" afterPath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/TileWorld.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/Wallpaper.java" afterPath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/Wallpaper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/World.java" afterPath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/World.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenIntro.java" afterPath="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenIntro.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="GameJam.iws" />
@@ -134,8 +93,34 @@
       <file leaf-file-name="EntityPlayer.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/EntityPlayer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="43" selection-start="322" selection-end="322" vertical-scroll-proportion="0.0" vertical-offset="932" max-vertical-offset="1458">
+            <state line="74" column="49" selection-start="1823" selection-end="1823" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1476">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScreenCredits.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenCredits.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="28" selection-start="555" selection-end="555" vertical-scroll-proportion="0.33778626" vertical-offset="183" max-vertical-offset="1134">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ScreenImageDisplay.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenImageDisplay.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="30" column="51" selection-start="648" selection-end="648" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="882">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#621#622#0" expanded="true" />
+                <element signature="e#653#654#0" expanded="true" />
+                <element signature="e#755#756#0" expanded="true" />
+                <element signature="e#784#785#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,25 +128,16 @@
       <file leaf-file-name="KeyboardMgr.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/KeyboardMgr.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="4" selection-start="977" selection-end="977" vertical-scroll-proportion="0.0" vertical-offset="434" max-vertical-offset="1170">
+            <state line="57" column="54" selection-start="1239" selection-end="1239" vertical-scroll-proportion="0.0" vertical-offset="650" max-vertical-offset="1386">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EntityDrawable.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/EntityDrawable.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="33" selection-start="1327" selection-end="1327" vertical-scroll-proportion="0.0" vertical-offset="338" max-vertical-offset="1404">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TileWorld.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TileWorld.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/TileWorld.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="240" column="72" selection-start="8139" selection-end="8139" vertical-scroll-proportion="6.446184" vertical-offset="1026" max-vertical-offset="5562">
+            <state line="240" column="72" selection-start="8139" selection-end="8139" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="5562">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#8931#8953#0" expanded="false" />
@@ -171,24 +147,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Wallpaper.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/Wallpaper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="25" selection-start="1038" selection-end="1038" vertical-scroll-proportion="0.0" vertical-offset="428" max-vertical-offset="972">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="FXManager.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/FXManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="30" selection-start="573" selection-end="573" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1764">
+            <state line="34" column="49" selection-start="811" selection-end="811" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="1674">
               <folding>
                 <element signature="e#642#1035#0" expanded="true" />
                 <element signature="e#1024#1025#0" expanded="true" />
-                <element signature="e#2143#2144#0" expanded="true" />
-                <element signature="e#2184#2185#0" expanded="true" />
+                <element signature="e#1886#1887#0" expanded="true" />
+                <element signature="e#1927#1928#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -197,7 +164,7 @@
       <file leaf-file-name="ScreenIntro.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenIntro.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="25" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1224">
+            <state line="27" column="36" selection-start="692" selection-end="692" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="1260">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -248,7 +215,6 @@
         <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/BlockData.java" />
         <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/EntityBoxAI.java" />
         <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/EntityAI.java" />
-        <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/EntityPlayer.java" />
         <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/EntityLineAI.java" />
         <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/EntityDrawable.java" />
         <option value="$PROJECT_DIR$/Desktop/src/org/overdrivenpotato/GameJam/Desktop/DesktopStarter.java" />
@@ -258,10 +224,13 @@
         <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/Imp.java" />
         <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/TileWorld.java" />
         <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenGame.java" />
-        <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/FXManager.java" />
         <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/GameJamGame.java" />
-        <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/KeyboardMgr.java" />
+        <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/EntityPlayer.java" />
+        <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/FXManager.java" />
+        <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenImageDisplay.java" />
         <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenIntro.java" />
+        <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/KeyboardMgr.java" />
+        <option value="$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenCredits.java" />
       </list>
     </option>
   </component>
@@ -678,7 +647,11 @@
       <created>1390715207948</created>
       <updated>1390715207948</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Game has music and new textures">
+      <created>1390773584668</created>
+      <updated>1390773584668</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -730,7 +703,8 @@
     <MESSAGE value="Enemies are now in-level&#10;" />
     <MESSAGE value="Much improved collision detection." />
     <MESSAGE value="Added map slicing capability, not ready for release yet" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added map slicing capability, not ready for release yet" />
+    <MESSAGE value="Game has music and new textures" />
+    <option name="LAST_COMMIT_MESSAGE" value="Game has music and new textures" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -740,16 +714,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$PROJECT_DIR$/Desktop/libs/gdx-sources.jar!/com/badlogic/gdx/graphics/Pixmap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="136" column="0" selection-start="5543" selection-end="5543" vertical-scroll-proportion="0.33266532" vertical-offset="1922" max-vertical-offset="6318" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/Desktop/libs/gdx-sources.jar!/com/badlogic/gdx/Application.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="110" column="11" selection-start="5703" selection-end="5703" vertical-scroll-proportion="-1.7777778" vertical-offset="2592" max-vertical-offset="3384" />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/Desktop/libs/gdx-sources.jar!/com/badlogic/gdx/ApplicationListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="30" column="21" selection-start="1281" selection-end="1300" vertical-scroll-proportion="0.36472946" vertical-offset="106" max-vertical-offset="864" />
@@ -939,7 +903,9 @@
     </entry>
     <entry file="jar:///usr/lib/jvm/java-7-oracle/src.zip!/java/lang/Override.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="18" selection-start="971" selection-end="971" vertical-scroll-proportion="0.73480666" vertical-offset="87" max-vertical-offset="630" />
+        <state line="50" column="18" selection-start="971" selection-end="971" vertical-scroll-proportion="0.73480666" vertical-offset="87" max-vertical-offset="630">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/EntityBoxAI.java">
@@ -1011,13 +977,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/EntityPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="43" selection-start="322" selection-end="322" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1458">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/EntityDrawable.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="53" column="33" selection-start="1327" selection-end="1327" vertical-scroll-proportion="0.0" vertical-offset="565" max-vertical-offset="1404">
@@ -1050,13 +1009,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenGame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="24" selection-start="861" selection-end="861" vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="1404">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/Desktop/libs/gdx-sources.jar!/com/badlogic/gdx/audio/Music.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="42" column="16" selection-start="1784" selection-end="1784" vertical-scroll-proportion="0.33206108" vertical-offset="258" max-vertical-offset="1584">
@@ -1071,18 +1023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/FXManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="30" selection-start="573" selection-end="573" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="1764">
-          <folding>
-            <element signature="e#642#1035#0" expanded="true" />
-            <element signature="e#1024#1025#0" expanded="true" />
-            <element signature="e#2143#2144#0" expanded="true" />
-            <element signature="e#2184#2185#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/GameJamGame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="36" selection-start="821" selection-end="821" vertical-scroll-proportion="0.0" vertical-offset="88" max-vertical-offset="918">
@@ -1090,29 +1030,77 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/KeyboardMgr.java">
+    <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/TileWorld.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="4" selection-start="977" selection-end="977" vertical-scroll-proportion="0.0" vertical-offset="434" max-vertical-offset="1170">
+        <state line="240" column="72" selection-start="8139" selection-end="8139" vertical-scroll-proportion="0.0" vertical-offset="1026" max-vertical-offset="5562">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#8931#8953#0" expanded="false" />
+            <element signature="e#10548#10615#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/EntityPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="49" selection-start="1823" selection-end="1823" vertical-scroll-proportion="0.0" vertical-offset="68" max-vertical-offset="1476">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenGame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="24" selection-start="861" selection-end="861" vertical-scroll-proportion="0.0" vertical-offset="100" max-vertical-offset="1404">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/FXManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="49" selection-start="811" selection-end="811" vertical-scroll-proportion="0.0" vertical-offset="132" max-vertical-offset="1674">
+          <folding>
+            <element signature="e#642#1035#0" expanded="true" />
+            <element signature="e#1024#1025#0" expanded="true" />
+            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1927#1928#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenImageDisplay.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="51" selection-start="648" selection-end="648" vertical-scroll-proportion="0.0" vertical-offset="315" max-vertical-offset="882">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#621#622#0" expanded="true" />
+            <element signature="e#653#654#0" expanded="true" />
+            <element signature="e#755#756#0" expanded="true" />
+            <element signature="e#784#785#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenIntro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="25" selection-start="511" selection-end="511" vertical-scroll-proportion="0.0" vertical-offset="150" max-vertical-offset="1224">
+        <state line="27" column="36" selection-start="692" selection-end="692" vertical-scroll-proportion="0.0" vertical-offset="200" max-vertical-offset="1260">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/TileWorld.java">
+    <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/KeyboardMgr.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="240" column="72" selection-start="8139" selection-end="8139" vertical-scroll-proportion="6.446184" vertical-offset="1026" max-vertical-offset="5562">
+        <state line="57" column="54" selection-start="1239" selection-end="1239" vertical-scroll-proportion="0.0" vertical-offset="650" max-vertical-offset="1386">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Main/src/org/overdrivenpotato/gamejam/ScreenCredits.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="28" selection-start="555" selection-end="555" vertical-scroll-proportion="0.33778626" vertical-offset="183" max-vertical-offset="1134">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8931#8953#0" expanded="false" />
-            <element signature="e#10548#10615#0" expanded="false" />
           </folding>
         </state>
       </provider>

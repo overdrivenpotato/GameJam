@@ -73,8 +73,9 @@ public class EntityPlayer extends EntityDrawable {
         }
     }
 
+    private final int padding = 3;
     @Override
     public Rectangle getBoundingBox() {
-        return new Rectangle((int) getX(), (int) (getY() + (getHeight() / 2f)), getWidth(), getHeight() / 2);
+        return new Rectangle((int) getX() + padding, (int) (getY() + (getHeight() / 2f)) + padding, getWidth() - padding, getHeight() / 2 - padding);
     }
 }

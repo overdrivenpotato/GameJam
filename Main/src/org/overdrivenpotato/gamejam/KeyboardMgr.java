@@ -54,7 +54,19 @@ public class KeyboardMgr {
         return Gdx.input.isKeyPressed(key);
     }
 
-    public static boolean anyKey() {
-        return Gdx.input.isKeyPressed(Input.Keys.ANY_KEY);
+    public static boolean startKey() {
+        return Gdx.input.isKeyPressed(Input.Keys.ENTER);
+    }
+
+    private static boolean credits;
+    public static boolean credits() {
+        if(!credits)
+        {
+            return credits = Gdx.input.isKeyPressed(Input.Keys.C);
+        }
+        else
+        {
+            return false;
+        }
     }
 }

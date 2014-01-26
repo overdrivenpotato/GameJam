@@ -32,7 +32,7 @@ public class FXManager {
             @Override
             public void run() {
                 lastTime = new Date().getTime();
-                screenShake = player.getY() / 15f;
+                screenShake = player.getY() / 35f;
                 try {
                     Thread.sleep(250);
                 } catch (InterruptedException e) {
@@ -47,12 +47,7 @@ public class FXManager {
         Date timeKeeper = new Date();
         if(timeKeeper.getTime() - lastTime > 1000)
         {
-            System.out.println(timeKeeper.getTime() - lastTime > 250);
-            System.out.println(timeKeeper.getTime());
-            System.out.println(lastTime);
-//            lastTime = timeKeeper.getTime();
             shaken = true;
-//            screenShake = playerY / 15f;
         }
         if(Math.abs(screenShake) <= 0.1)
         {
