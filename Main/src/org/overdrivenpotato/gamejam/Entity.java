@@ -1,5 +1,7 @@
 package org.overdrivenpotato.gamejam;
 
+import com.badlogic.gdx.Gdx;
+
 /**
  * Created by marko on 24/01/14.
  */
@@ -42,5 +44,10 @@ public abstract class Entity {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public boolean isOffScreen()
+    {
+        return (x < 0 || x > Gdx.graphics.getWidth() || y < 0 || y > Gdx.graphics.getHeight());
     }
 }

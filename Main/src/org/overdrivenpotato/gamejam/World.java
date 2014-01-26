@@ -38,7 +38,6 @@ public class World {
         tileWorld.move(0, scrollSpeed);
         for(Entity e : entities)
         {
-            e.tick(keyb, this);
             if(!(e instanceof EntityPlayer))
             {
                 if(((EntityDrawable)e).collision(screenGame.getPlayer()))
@@ -52,6 +51,9 @@ public class World {
                     return false;
                 }
             }
+            if(e.isOffScreen())
+                continue;
+            e.tick(keyb, this);
 
             if(e instanceof EntityPlayer)
             {

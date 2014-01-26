@@ -9,7 +9,6 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileSet;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
-import sun.org.mozilla.javascript.internal.ast.Block;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -21,8 +20,9 @@ public class TileWorld {
     private SpriteBatch batch;
     private TiledMap map;
     private float offsetX, offSetY;
-    private HashMap<Point, Imp> pointCellMap;
+    private HashMap<Point, Imp> pointCllMap;
     private HashMap<Integer, BlockData> idDataMap;
+    private BlockData[][] blocks;
     private World world;
 
     public TileWorld(World world)
@@ -32,8 +32,8 @@ public class TileWorld {
         this.map = new TmxMapLoader().load("Main/assets/maps/map2.tmx");
         offsetX = 0;
         offSetY = Gdx.graphics.getHeight();
-        pointCellMap = new HashMap<Point, Imp>();
         idDataMap = new HashMap<Integer, BlockData>();
+        blocks = new BlockData[(Integer) map.getProperties().get("width")][(Integer) map.getProperties().get("height")];
         setTextures();
         loadMap();
     }
@@ -68,7 +68,7 @@ public class TileWorld {
                     {
                         if(!tileLayer.getName().equalsIgnoreCase("entities"))
                         {
-                            pointCellMap.put(new Point(i, j), idDataMap.get(cell.getTile().getId()).getImp());
+                            blocks[i][j] = idDataMap.get(cell.getTile().getId());
                         }
                         else
                         {
@@ -89,16 +89,21 @@ public class TileWorld {
     {
         refreshAnims();
         batch.begin();
-        for(Point p : pointCellMap.keySet())
+        for(int i = 0; i < blocks.length; i++)
         {
-            Imp imp = pointCellMap.get(p);
-            if(imp != null)
+            for(int j = 0; j < blocks[i].length; j++)
             {
-                if((p.getX() < 0 || p.getX() - imp.getTextureStatic().getRegionWidth() > Gdx.graphics.getWidth()) ||
-                        (p.getY() < 0 || p.getY() - imp.getTextureStatic().getRegionHeight() > Gdx.graphics.getHeight()))
+                if(blocks[i][j] == null)
                     continue;
-                TextureRegion tex = imp.getTextureStatic();
-                batch.draw(tex, p.x * (Integer) map.getProperties().get("tilewidth") + offsetX, p.y * (Integer) map.getProperties().get("tileheight") + offSetY);
+                Imp imp = blocks[i][j].getImp();
+                if(imp != null)
+                {
+                    if((i < 0 || i - imp.getTextureStatic().getRegionWidth() > Gdx.graphics.getWidth()) ||
+                            (j < 0 || j - imp.getTextureStatic().getRegionHeight() > Gdx.graphics.getHeight()))
+                        continue;
+                    TextureRegion tex = imp.getTextureStatic();
+                    batch.draw(tex, i * (Integer) map.getProperties().get("tilewidth") + offsetX, j * (Integer) map.getProperties().get("tileheight") + offSetY);
+                }
             }
         }
         batch.end();
@@ -117,22 +122,65 @@ public class TileWorld {
     }
 
     public boolean collision(EntityDrawable e) {
-        for(Point p : pointCellMap.keySet())
+        if(e instanceof EntityLineAI)
         {
-            Imp cell = pointCellMap.get(p);
-            if(cell != null)
+            for(int i = 0; i < blocks.length; i++)
             {
-                Rectangle entity = e.getBoundingBox();
-                Rectangle block = new Rectangle(
-                        (int) (p.x * (Integer) map.getProperties().get("tilewidth") + offsetX),
-                        (int) (p.y * (Integer) map.getProperties().get("tileheight") + offSetY),
-                        cell.getTextureStatic().getRegionWidth(),
-                        cell.getTextureStatic().getRegionHeight()
-                );
-                if(entity.intersects(block))
+                int j = (int) ((e.getY() - offSetY) / getTileHeight());
+                if(checkBlockCollision(i, j, e))
                 {
                     return true;
                 }
+            }
+        }
+        else
+        {
+            for(int i = 0; i < blocks.length; i++)
+            {
+                for(int j = 0; j < blocks[i].length; j++)
+                {
+                    if(checkBlockCollision(i, j, e))
+                    {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public int getTileWidth()
+    {
+        return (Integer) map.getProperties().get("tilewidth");
+    }
+
+    public int getTileHeight()
+    {
+        return (Integer) map.getProperties().get("tileheight");
+    }
+
+    private boolean checkBlockCollision(int i, int j, EntityDrawable e)
+    {
+        if(j * getTileHeight() + offSetY > Gdx.graphics.getHeight() || j * getTileHeight() + offSetY < 0)
+            return false;
+        if(blocks[i][j] == null)
+            return false;
+        Imp imp = blocks[i][j].getImp();
+        if(imp != null)
+        {
+            Rectangle entity = e.getBoundingBox();
+//                    if((j - imp.getTextureStatic().getRegionHeight() > Gdx.graphics.getHeight()|| i - imp.getTextureStatic().getRegionWidth() > Gdx.graphics.getWidth()) ||
+//                            (j < 0 || i < 0))
+//                        continue;
+            Rectangle block = new Rectangle(
+                    (int) (i * getTileWidth() + offsetX),
+                    (int) (j * getTileHeight() + offSetY),
+                    imp.getTextureStatic().getRegionWidth(),
+                    imp.getTextureStatic().getRegionHeight()
+            );
+            if(entity.intersects(block))
+            {
+                return true;
             }
         }
         return false;
