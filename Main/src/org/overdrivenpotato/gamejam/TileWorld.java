@@ -12,6 +12,7 @@ import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 
 import java.awt.*;
 import java.util.HashMap;
+import java.util.Random;
 
 /**
  * Created by marko on 25/01/14.
@@ -24,18 +25,20 @@ public class TileWorld {
     private HashMap<Integer, BlockData> idDataMap;
     private BlockData[][] blocks;
     private World world;
+    private int level = 0;
 
     public TileWorld(World world)
     {
         this.world = world;
         this.batch = new SpriteBatch();
-        this.map = new TmxMapLoader().load("Main/assets/maps/map2.tmx");
+//        this.map = new TmxMapLoader().load("Main/assets/maps/map2.tmx");
+        spliceNext();
         offsetX = 0;
         offSetY = Gdx.graphics.getHeight();
         idDataMap = new HashMap<Integer, BlockData>();
         blocks = new BlockData[(Integer) map.getProperties().get("width")][(Integer) map.getProperties().get("height")];
         setTextures();
-        loadMap();
+        loadMap(0, 0);
     }
 
     private void setTextures() {
@@ -54,21 +57,21 @@ public class TileWorld {
         }
     }
 
-    private void loadMap() {
+    private void loadMap(int offX, int offY) {
         for(MapLayer mapLayer : map.getLayers())
         {
             TiledMapTileLayer tileLayer = (TiledMapTileLayer)mapLayer;
-
+            System.out.println("Loading layer " + tileLayer.getName());
             for(int i = 0; i < tileLayer.getWidth(); i++)
             {
                 for(int j = 0; j < tileLayer.getHeight(); j++)
                 {
-                    TiledMapTileLayer.Cell cell = tileLayer.getCell(i, j);
+                    TiledMapTileLayer.Cell cell = tileLayer.getCell(i - offX, j - offY);
                     if(cell != null)
                     {
                         if(!tileLayer.getName().equalsIgnoreCase("entities"))
                         {
-                            blocks[i][j] = idDataMap.get(cell.getTile().getId());
+                            blocks[i][j + offY] = idDataMap.get(cell.getTile().getId());
                         }
                         else
                         {
@@ -102,7 +105,7 @@ public class TileWorld {
                             (j < 0 || j - imp.getTextureStatic().getRegionHeight() > Gdx.graphics.getHeight()))
                         continue;
                     TextureRegion tex = imp.getTextureStatic();
-                    batch.draw(tex, i * (Integer) map.getProperties().get("tilewidth") + offsetX, j * (Integer) map.getProperties().get("tileheight") + offSetY);
+                    batch.draw(tex, i * (Integer) map.getProperties().get("tilewidth") + offsetX + offX, j * (Integer) map.getProperties().get("tileheight") + offSetY + offY);
                 }
             }
         }
@@ -184,5 +187,65 @@ public class TileWorld {
             }
         }
         return false;
+    }
+
+    public void tick() {
+        if(blocks[0].length * getTileHeight() + offSetY <= Gdx.graphics.getHeight())
+        {
+            level++;
+            spliceNext();
+        }
+    }
+
+    private void spliceNext() {
+        System.out.println("Splicing");
+        switch (level)
+        {
+            case 0:
+                int loadere = new Random().nextInt(5) + 1;
+                String pathe = "Main/assets/maps/easy" + loadere + ".tmx";
+                map = new TmxMapLoader().load(pathe);
+                break;
+            case 1:
+                int loader = new Random().nextInt(5) + 1;
+                String path = "Main/assets/maps/medium" + loader + ".tmx";
+                TiledMap tempMap = new TmxMapLoader().load(path);
+                int width = (Integer) tempMap.getProperties().get("width");
+                int height = (Integer) tempMap.getProperties().get("height");
+                int cutoffLength = (int) Math.ceil(Gdx.graphics.getHeight() / getTileHeight());
+                map = tempMap;
+                BlockData[][] blocksT = new BlockData[width][height + cutoffLength];
+                for(int i = 0; i < blocks.length; i++)
+                {
+                    for(int j = blocks[0].length - 1; j >= blocks[0].length - cutoffLength; j--)
+                    {
+                        blocksT[i][j - (blocks[0].length - 1 - cutoffLength)] = blocks[i][j];
+                    }
+                }
+                blocks = blocksT;
+                loadMap(0, cutoffLength / 2 + 1);
+                offSetY = -cutoffLength + getTileHeight() * 2;
+                break;
+            case 2:
+                loader = new Random().nextInt(5) + 1;
+                path = "Main/assets/maps/hard" + loader + ".tmx";
+                tempMap = new TmxMapLoader().load(path);
+                width = (Integer) tempMap.getProperties().get("width");
+                height = (Integer) tempMap.getProperties().get("height");
+                cutoffLength = (int) Math.ceil(Gdx.graphics.getHeight() / getTileHeight());
+                map = tempMap;
+                blocksT = new BlockData[width][height + cutoffLength];
+                for(int i = 0; i < blocks.length; i++)
+                {
+                    for(int j = blocks[0].length - 1; j >= blocks[0].length - cutoffLength; j--)
+                    {
+                        blocksT[i][j - (blocks[0].length - 1 - cutoffLength)] = blocks[i][j];
+                    }
+                }
+                blocks = blocksT;
+                loadMap(0, cutoffLength / 2 + 1);
+                offSetY = -cutoffLength + getTileHeight() * 2;
+                break;
+        }
     }
 }

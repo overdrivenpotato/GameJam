@@ -38,7 +38,7 @@ public abstract class EntityDrawable extends Entity {
         batch = new SpriteBatch();
     }
 
-    public void draw(SpriteBatch batch)
+    public void draw(SpriteBatch batch, float offX, float offY)
     {
         if(x < 0 || x > Gdx.graphics.getWidth() || y < 0 || y > Gdx.graphics.getHeight())
             return;
@@ -51,7 +51,7 @@ public abstract class EntityDrawable extends Entity {
 
         if(nulld)
             batch.begin();
-        batch.draw(texture.getTexture(), x, y);
+        batch.draw(texture.getTexture(), x + offX, y + offY);
         if(nulld)
             batch.end();
     }

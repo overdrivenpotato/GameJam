@@ -1,9 +1,11 @@
 package org.overdrivenpotato.gamejam;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Rectangle;
 
 import java.util.ArrayList;
 
@@ -36,6 +38,7 @@ public class World {
         scrollSpeed *= 1.0001;
         bg.move(0, scrollSpeed);
         tileWorld.move(0, scrollSpeed);
+        tileWorld.tick();
         for(Entity e : entities)
         {
             if(!(e instanceof EntityPlayer))
@@ -78,15 +81,16 @@ public class World {
 
     public void draw()
     {
+        FXManager.update(screenGame.getPlayer().getX(), screenGame.getPlayer().getY());
         bg.draw();
         batch.begin();
         for(Entity e : entities)
         {
             if(e instanceof EntityDrawable)
-                ((EntityDrawable) e).draw(batch);
+                ((EntityDrawable) e).draw(batch, FXManager.getModX(), FXManager.getModY());
         }
         batch.end();
-        tileWorld.render(0, 0);
+        tileWorld.render(FXManager.getModX(), FXManager.getModY());
     }
 
     public boolean collision(EntityDrawable entityDrawable) {
