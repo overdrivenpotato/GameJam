@@ -34,7 +34,7 @@ public abstract class Entity {
         this.y = y;
     }
 
-    public abstract void tick(KeyboardMgr keyb);
+    public abstract void tick(KeyboardMgr keyb, World world);
 
     public void setX(int x) {
         this.x = x;

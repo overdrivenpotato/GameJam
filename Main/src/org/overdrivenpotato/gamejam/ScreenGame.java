@@ -5,6 +5,7 @@ import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.backends.lwjgl.LwjglApplication;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 /**
  * Created by marko on 25/01/14.
@@ -20,7 +21,7 @@ public class ScreenGame implements Screen {
     {
         this.theGame = gameJamGame;
         entityPlayer = new EntityPlayer(new Imp(new Texture("Main/assets/playeranimboxes.png"), 2, 1, 0.12f), 100, 100);
-        world = new World(550, 600);
+        world = new World(550, 600, this);
         world.spawnEntity(entityPlayer);
 
         graphics = Gdx.graphics.getGL20();
@@ -67,5 +68,9 @@ public class ScreenGame implements Screen {
     @Override
     public void dispose() {
 
+    }
+
+    public EntityPlayer getPlayer() {
+        return entityPlayer;
     }
 }

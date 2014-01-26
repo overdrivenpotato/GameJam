@@ -1,5 +1,6 @@
 package org.overdrivenpotato.gamejam;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -37,11 +38,22 @@ public abstract class EntityDrawable extends Entity {
         batch = new SpriteBatch();
     }
 
-    public void draw()
+    public void draw(SpriteBatch batch)
     {
-        batch.begin();
+        if(x < 0 || x > Gdx.graphics.getWidth() || y < 0 || y > Gdx.graphics.getHeight())
+            return;
+        boolean nulld = false;
+        if(batch == null)
+        {
+            nulld = true;
+            batch = this.batch;
+        }
+
+        if(nulld)
+            batch.begin();
         batch.draw(texture.getTexture(), x, y);
-        batch.end();
+        if(nulld)
+            batch.end();
     }
 
     public int getHeight()
@@ -57,5 +69,10 @@ public abstract class EntityDrawable extends Entity {
     public Rectangle getBoundingBox()
     {
         return new Rectangle((int) getX(), (int) getY(), getWidth(), getHeight());
+    }
+
+    public boolean collision(EntityDrawable e)
+    {
+        return this.getBoundingBox().intersects(e.getBoundingBox());
     }
 }

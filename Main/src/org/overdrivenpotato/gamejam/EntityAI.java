@@ -24,8 +24,7 @@ public abstract class EntityAI extends EntityDrawable
         super(x, y);
     }
 
-    @Override
-    public void tick(KeyboardMgr keyb) {
+    public void tick(KeyboardMgr keyb, World world) {
         tick++;
         if(tick > traceSize)
             tick = 0;

@@ -1,13 +1,13 @@
 package org.overdrivenpotato.gamejam;
 
-public class EntityBoxAI extends EntityAI {
+public abstract class EntityBoxAI extends EntityAI {
 
     public EntityBoxAI(int traceSize, Imp tex, float x, float y) {
         super(traceSize, tex, x, y);
     }
 
     @Override
-    public void tick(KeyboardMgr keyb) {
+    public void tick(KeyboardMgr keyb, World world) {
         switch(tick / (traceSize / 4))
         {
             case 0:

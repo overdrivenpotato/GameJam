@@ -9,6 +9,7 @@ import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TiledMapTileLayer;
 import com.badlogic.gdx.maps.tiled.TiledMapTileSet;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
+import sun.org.mozilla.javascript.internal.ast.Block;
 
 import java.awt.*;
 import java.util.HashMap;
@@ -21,16 +22,18 @@ public class TileWorld {
     private TiledMap map;
     private float offsetX, offSetY;
     private HashMap<Point, Imp> pointCellMap;
-    private HashMap<Integer, Imp> idImpMap;
+    private HashMap<Integer, BlockData> idDataMap;
+    private World world;
 
-    public TileWorld()
+    public TileWorld(World world)
     {
+        this.world = world;
         this.batch = new SpriteBatch();
         this.map = new TmxMapLoader().load("Main/assets/maps/map2.tmx");
         offsetX = 0;
         offSetY = Gdx.graphics.getHeight();
         pointCellMap = new HashMap<Point, Imp>();
-        idImpMap = new HashMap<Integer, Imp>();
+        idDataMap = new HashMap<Integer, BlockData>();
         setTextures();
         loadMap();
     }
@@ -39,13 +42,16 @@ public class TileWorld {
         for(TiledMapTileSet set : map.getTileSets())
         {
             int firstgid = (Integer)set.getProperties().get("firstgid");
-            String fileName = "Main/assets/maps/" + (String) set.getProperties().get("imagesource");
+            String fileName = "Main/assets/maps/" + set.getProperties().get("imagesource");
             int width = (Integer) set.getProperties().get("imagewidth");
             int height = (Integer) set.getProperties().get("imageheight");
-            idImpMap.put(Integer.valueOf(firstgid), new  Imp(new Texture(fileName), width / height, height / height, 0.25f));
+            int tileWidth = (Integer) set.getProperties().get("tilewidth");
+            int tileHeight = (Integer) set.getProperties().get("tileheight");
+            idDataMap.put(Integer.valueOf(firstgid),
+                    new BlockData(new Imp(new Texture(fileName), width / tileWidth, height / tileHeight, 0.5f),
+                            set.getProperties()
+                    ));
         }
-//        idImpMap.put(Integer.valueOf(1), new Imp(new Texture("Main/assets/maps/wallnew.png"), 2, 1, 0.25f));
-//        idImpMap.put(Integer.valueOf(2), new Imp(new Texture("Main/assets/maps/movers.png"), 2, 1, 0.25f));
     }
 
     private void loadMap() {
@@ -60,7 +66,19 @@ public class TileWorld {
                     TiledMapTileLayer.Cell cell = tileLayer.getCell(i, j);
                     if(cell != null)
                     {
-                        pointCellMap.put(new Point(i, j), idImpMap.get(cell.getTile().getId()));
+                        if(!tileLayer.getName().equalsIgnoreCase("entities"))
+                        {
+                            pointCellMap.put(new Point(i, j), idDataMap.get(cell.getTile().getId()).getImp());
+                        }
+                        else
+                        {
+                            BlockData data = idDataMap.get(cell.getTile().getId());
+                            String s = (String) data.getProperties().get("imagesource");
+                            if (s.contains("movers")) {
+                                world.spawnEntity(new EntityLineAI(data.getImp(), i * (Integer) map.getProperties().get("tilewidth"),
+                                        j * (Integer) map.getProperties().get("tileheight") + offSetY));
+                            }
+                        }
                     }
                 }
             }
@@ -73,23 +91,23 @@ public class TileWorld {
         batch.begin();
         for(Point p : pointCellMap.keySet())
         {
-            Imp cell = pointCellMap.get(p);
-            if(cell != null)
+            Imp imp = pointCellMap.get(p);
+            if(imp != null)
             {
-                if((p.getX() < 0 || p.getX() - cell.getTextureStatic().getRegionWidth() > Gdx.graphics.getWidth()) ||
-                        (p.getY() < 0 || p.getY() - cell.getTextureStatic().getRegionHeight() > Gdx.graphics.getHeight()))
+                if((p.getX() < 0 || p.getX() - imp.getTextureStatic().getRegionWidth() > Gdx.graphics.getWidth()) ||
+                        (p.getY() < 0 || p.getY() - imp.getTextureStatic().getRegionHeight() > Gdx.graphics.getHeight()))
                     continue;
-                TextureRegion tex = cell.getTextureStatic();
-                batch.draw(tex, p.x * tex.getRegionWidth() + offsetX, p.y * tex.getRegionHeight() + offSetY);
+                TextureRegion tex = imp.getTextureStatic();
+                batch.draw(tex, p.x * (Integer) map.getProperties().get("tilewidth") + offsetX, p.y * (Integer) map.getProperties().get("tileheight") + offSetY);
             }
         }
         batch.end();
     }
 
     private void refreshAnims() {
-        for(Imp i : idImpMap.values())
+        for(BlockData i : idDataMap.values())
         {
-            i.updateAnim();
+            i.getImp().updateAnim();
         }
     }
 
@@ -104,14 +122,14 @@ public class TileWorld {
             Imp cell = pointCellMap.get(p);
             if(cell != null)
             {
-                Rectangle player = e.getBoundingBox();
+                Rectangle entity = e.getBoundingBox();
                 Rectangle block = new Rectangle(
-                        (int) (p.x * cell.getTextureStatic().getRegionWidth() + offsetX),
-                        (int) (p.y * cell.getTextureStatic().getRegionHeight() + offSetY),
+                        (int) (p.x * (Integer) map.getProperties().get("tilewidth") + offsetX),
+                        (int) (p.y * (Integer) map.getProperties().get("tileheight") + offSetY),
                         cell.getTextureStatic().getRegionWidth(),
                         cell.getTextureStatic().getRegionHeight()
                 );
-                if(player.intersects(block))
+                if(entity.intersects(block))
                 {
                     return true;
                 }

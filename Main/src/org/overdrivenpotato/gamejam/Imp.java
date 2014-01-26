@@ -48,13 +48,13 @@ public class Imp {
     }
 
     public Imp(TextureRegion textureRegion) {
-        animation = new Animation(1f, textureRegion);
+        this(new Animation(1f, textureRegion));
     }
 
     public TextureRegion getTexture()
     {
         updateAnim();
-        return animation.getKeyFrame(stateTime, true);
+        return getTextureStatic();
     }
 
     public TextureRegion getTextureStatic() {

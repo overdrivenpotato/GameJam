@@ -16,32 +16,39 @@ public class World {
     private Wallpaper bg;
     private TileWorld tileWorld;
     private float scrollSpeed;
+    private ScreenGame screenGame;
+    private SpriteBatch batch;
 
-    public World(int width, int height)
+    public World(int width, int height, ScreenGame screenGame)
     {
+        batch = new SpriteBatch();
+        this.screenGame = screenGame;
         this.scrollSpeed = -4;
         this.width = width;
         this.height = height;
         entities = new ArrayList<Entity>();
         bg = new Wallpaper(new Texture("Main/assets/backgroundnew.png"));
-        tileWorld = new TileWorld();
+        tileWorld = new TileWorld(this);
     }
 
     public boolean tick(KeyboardMgr keyb)
     {
         scrollSpeed *= 1.0001;
         bg.move(0, scrollSpeed);
+        tileWorld.move(0, scrollSpeed);
         for(Entity e : entities)
         {
-            e.tick(keyb);
-            tileWorld.move(0, scrollSpeed);
+            e.tick(keyb, this);
             if(!(e instanceof EntityPlayer))
+            {
+                if(((EntityDrawable)e).collision(screenGame.getPlayer()))
+                    return false;
                 e.move(0, scrollSpeed);
+            }
             else
             {
                 if(tileWorld.collision((EntityPlayer) e))
                 {
-//                    e.move(0, -50);
                     return false;
                 }
             }
@@ -70,11 +77,17 @@ public class World {
     public void draw()
     {
         bg.draw();
+        batch.begin();
         for(Entity e : entities)
         {
             if(e instanceof EntityDrawable)
-                ((EntityDrawable) e).draw();
+                ((EntityDrawable) e).draw(batch);
         }
+        batch.end();
         tileWorld.render(0, 0);
+    }
+
+    public boolean collision(EntityDrawable entityDrawable) {
+        return tileWorld.collision(entityDrawable);
     }
 }

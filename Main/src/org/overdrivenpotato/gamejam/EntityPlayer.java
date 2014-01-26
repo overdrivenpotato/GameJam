@@ -33,7 +33,7 @@ public class EntityPlayer extends EntityDrawable {
         super(x, y);
     }
 
-    public void tick(KeyboardMgr keyb)
+    public void tick(KeyboardMgr keyb, World world)
     {
         if(!keyb.barrel() && !barelling)
         {
